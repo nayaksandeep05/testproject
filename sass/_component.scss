@@ -1,0 +1,392 @@
+// NAVIGATION PANEL
+.navbar-custom {
+  background-color: $color-primary;
+  padding: 15px 30px;
+  color: $color-white;
+}
+
+// Navbar Brand
+.navbar-brand {
+  &:link,
+  &:visited {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+// Navbar collapse
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  &:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+}
+
+.nav-link {
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: 2.5rem;
+    color: $color-white;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+// Images box
+.images {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  @include border-light;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__box {
+    width: 25%;
+    overflow: hidden;
+    @include border-light;
+
+    @include respond(phone) {
+      width: 80%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+
+      @include respond(phone) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+}
+
+
+// content box navigation
+
+.main-content {
+
+  &__navigation {
+    border-bottom: 1px solid $color-grey-5;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 2rem 0 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $color-grey-4;
+      padding: 1.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all .3s;
+    }
+
+    &:hover,
+    &:active {
+      font-weight: 500;
+      text-decoration: none;
+      color: $color-text-dark;
+      border-bottom: 2px solid $color-primary;
+    }
+
+    &--active {
+      &:link,
+      &:visited {
+        font-weight: 500;
+        text-decoration: none;
+        color: $color-text-dark;
+        border-bottom: 2px solid $color-primary;
+      }
+    }
+
+  }
+
+
+}
+
+
+// Variants
+
+.variant {
+  padding: 2rem;
+  @include border-light;
+
+  &__box {
+
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image {
+    width: 15%;
+    @include border-light;
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__detail {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: left;
+  }
+
+
+}
+
+
+// Selection
+.selection {
+  background-color: $color-grey-3;
+  padding: 1.5rem;
+  @include border-light;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    select {
+      margin-right: 1rem;
+    }
+  }
+
+
+  &__box {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__heading {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: .5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__container {
+    padding: .5rem 1.5rem;
+    @include border-light;
+    background-color: $color-white;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__drpdown-icon {
+    font-size: 2rem;
+  }
+
+  &__logo {
+    width: 30%;
+    text-align: left;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.option-selected--dark {
+  @include selected-option($color-primary, $color-white);
+}
+
+.option-selected--light {
+  @include selected-option($color-grey-3, $color-text-dark);
+}
+
+.option-no-selection {
+  padding: .5rem 1.5rem .5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+
+.location-box {
+  flex: 0 0 40%;
+  margin-left: 1rem;
+}
+
+
+// Switch
+.switch {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: $color-white;
+  border-radius: 100px;
+  border: 1px solid $color-grey-5;
+  padding: 0 0 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-circle {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    margin-left: 1rem;
+  }
+}
+
+
+// Landing Page
+.landpage {
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__box {
+    flex: 0 0 35%;
+
+    @include respond(phone) {
+      flex: none;
+      width: 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 2rem;
+
+      @include respond(phone) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__container {
+    width: 100%;
+    height: 18rem;
+    @include border-light;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    color: $color-white;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+  }
+
+  &__switch {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__image {
+    width: 25%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+}
+
+#landpage-1 {
+  background-image: linear-gradient(to right, rgba($color-primary, .4), rgba($color-primary, .4)), url('../images/pexels-garrett-morrow-610945.jpg');
+}
+
+#landpage-2,
+#package-1 {
+  background-color: $color-grey-3;
+}
+
+#package-1 .landpage__icon {
+  color: $color-primary;
+}
+
+
+// table
+
+.orders {
+
+  table {
+    font-size: 1.2rem;
+
+    th {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $color-grey-4;
+    }
+
+    td {
+      font-weight: 500;
+      text-transform: capitalize;
+      color: $color-text-dark;
+    }
+
+  }
+
+}

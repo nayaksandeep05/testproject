@@ -1,0 +1,162 @@
+// SIDE NAVIGATION PANEL
+
+.sidebar {
+  background-color: $color-white;
+
+  &__list {
+    margin-top: 3rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin: .75rem 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      border-left: 3px solid $color-primary;
+      transform: scaleY(0);
+      background-color: #f2f2f2;
+      transition: transform .2s,
+                  width .4s cubic-bezier(1,0,0,1) .2s,
+                  background-color .2s;
+    }
+    
+    &:hover::before,
+    &--active::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $color-text-dark;
+      cursor: pointer;
+      padding: 1rem 3rem;
+      text-transform: capitalize;
+      position: relative;
+      z-index: 10;
+
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+      color: $color-text-dark;
+    }
+
+  }
+
+  &__icon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+  }
+
+}
+
+// DropDown
+.dropdownNav {
+
+  &-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0.5rem 0;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      color: $color-text-dark;
+      padding: 1rem 0;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-text-dark;
+    }
+  }
+
+}
+
+// Main Content
+.main-content {
+  background-color: $color-white;
+  padding: 2rem;
+  margin: 3rem 0;
+  @include border-light;
+}
+
+
+// Content box
+.content-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  @include respond(phone) {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  &--left {
+    flex: 0 0 60%;
+    margin-right: 2rem;
+
+    @include respond(phone) {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  &--right {
+    flex: 1;
+  }
+
+}
+
+// Form group
+.form-group {
+  padding: 1.5rem 0;
+
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.form-label {
+  font-size: 1.4em;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: .5rem;
+}
+
+.form-control {
+  height: 4rem;
+}
